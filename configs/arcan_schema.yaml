@@ -1,0 +1,11 @@
+files:
+  affects: affects-smell-affects.csv
+  metrics: metrics-component-metrics.csv
+  smells: smells-smell-characteristics.csv
+search_subdirectories: [".", raw]
+columns:
+  common: {project: project, version_id: versionId, version_index: versionIndex, version_date: versionDate}
+  smells: {smell_id: vertexId, smell_type: smellType}
+  affects: {smell_id: fromId, affected_component_id: toId, affected_component_name: to}
+  metrics: {affected_component_id: vertexId, affected_component_name: name}
+

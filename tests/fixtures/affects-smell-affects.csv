@@ -1,0 +1,5 @@
+project,versionId,versionIndex,versionDate,edgeId,edgeLabel,from,fromId,to,toId
+fixture,v1,1,2026-01-01,e1,affects,godComponent,s1,pkg.god,c1
+fixture,v1,1,2026-01-01,e2,affects,unstableDep,s2,pkg.unstable,c2
+fixture,v1,1,2026-01-01,e3,affects,hubLikeDep,s3,pkg.hub,c3
+fixture,v1,1,2026-01-01,e4,affects,cyclicDep,s4,pkg.cycle,c4

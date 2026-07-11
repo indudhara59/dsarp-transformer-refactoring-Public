@@ -1,0 +1,31 @@
+{
+  "files": {
+    "affects": {
+      "file_name": "affects-smell-affects.csv", "rows": 8307, "columns": 10,
+      "column_names": ["project", "versionId", "versionIndex", "versionDate", "edgeId", "edgeLabel", "from", "fromId", "to", "toId"],
+      "inferred_data_types": {"project":"string","versionId":"string","versionIndex":"integer","versionDate":"datetime","edgeId":"integer identifier","edgeLabel":"string","from":"string","fromId":"integer identifier","to":"string","toId":"integer identifier"},
+      "null_counts": {}, "duplicate_counts": {"full_rows": 0, "composite_edge_key": 0},
+      "candidate_join_keys": ["project", "versionId", "fromId", "toId"], "warnings": []
+    },
+    "metrics": {
+      "file_name": "metrics-component-metrics.csv", "rows": 3313, "columns": 22,
+      "column_names": ["project", "versionId", "versionIndex", "versionDate", "AbstractnessMetric", "ChangeHasOccurred", "ComponentType", "FanIn", "FanOut", "InstabilityMetric", "IsNested", "LinesOfCode", "NumberOfChildren", "PageRank", "TotalAmountOfChanges", "constructType", "filePathReal", "filePathRelative", "name", "simpleName", "vertexId", "vertexLabel"],
+      "inferred_data_types": {"project":"string","versionId":"string","versionIndex":"integer","versionDate":"datetime","AbstractnessMetric":"float","ChangeHasOccurred":"boolean","ComponentType":"string","FanIn":"integer","FanOut":"integer","InstabilityMetric":"float","IsNested":"boolean","LinesOfCode":"integer","NumberOfChildren":"integer","PageRank":"float","TotalAmountOfChanges":"integer","constructType":"string","filePathReal":"string","filePathRelative":"string","name":"string","simpleName":"string","vertexId":"integer identifier","vertexLabel":"string"},
+      "null_counts": {}, "duplicate_counts": {"full_rows": 0, "project_version_vertexId": 0},
+      "candidate_join_keys": ["project", "versionId", "vertexId"], "warnings": []
+    },
+    "smells": {
+      "file_name": "smells-smell-characteristics.csv", "rows": 717, "columns": 33,
+      "column_names": ["project", "versionId", "versionIndex", "versionDate", "ATDI", "ATDI_WEIGHTED", "AffectedClassesRatio", "AffectedComponentType", "AffectedConstructType", "AffectedElements", "AffectsIndexList", "AfferentAffectedRatio", "CentralComponent", "EfferentAffectedRatio", "InstabilityGap", "LOCDensity", "MeanContTreeDepth", "MeanContTreeDistance", "NumberOfEdges", "PageRankWeighted", "PageRankWeightedRanking", "Severity", "Shape", "Size", "SmellExtent", "SmellExtentByWeight", "StDContTreeDepth", "StDContTreeDistance", "Strength", "TotalNumberOfChanges", "smellType", "vertexId", "vertexLabel"],
+      "inferred_data_types": {"project":"string","versionId":"string","versionIndex":"integer","versionDate":"datetime","ATDI":"float","ATDI_WEIGHTED":"float","AffectedClassesRatio":"float","AffectedComponentType":"string","AffectedConstructType":"string","AffectedElements":"string list","AffectsIndexList":"string list","AfferentAffectedRatio":"float","CentralComponent":"nullable string","EfferentAffectedRatio":"float","InstabilityGap":"float","LOCDensity":"float","MeanContTreeDepth":"float","MeanContTreeDistance":"float","NumberOfEdges":"integer","PageRankWeighted":"float","PageRankWeightedRanking":"integer","Severity":"float","Shape":"nullable string","Size":"integer","SmellExtent":"float","SmellExtentByWeight":"float","StDContTreeDepth":"float","StDContTreeDistance":"float","Strength":"float","TotalNumberOfChanges":"integer","smellType":"string","vertexId":"integer identifier","vertexLabel":"string"},
+      "null_counts": {"AffectsIndexList": 25, "CentralComponent": 692, "Shape": 25},
+      "duplicate_counts": {"full_rows": 0, "project_version_vertexId": 0},
+      "candidate_join_keys": ["project", "versionId", "vertexId"], "warnings": []
+    }
+  },
+  "unique_smell_types": ["cyclicDep", "godComponent", "hubLikeDep", "unstableDep"],
+  "selected_smell_counts": {"godComponent": 1, "hubLikeDep": 12, "unstableDep": 12},
+  "excluded_smell_counts": {"cyclicDep": 692},
+  "joins": {"unmatched_smells": 0, "unmatched_affected_components": 0, "duplicate_smell_keys": 0, "duplicate_metric_keys": 0, "unified_rows": 25},
+  "warnings": []
+}

@@ -1,0 +1,5 @@
+project,versionId,versionIndex,versionDate,ATDI,ATDI_WEIGHTED,AffectedClassesRatio,AffectedElements,AfferentAffectedRatio,CentralComponent,EfferentAffectedRatio,InstabilityGap,NumberOfEdges,PageRankWeighted,Severity,Size,SmellExtent,SmellExtentByWeight,Strength,smellType,vertexId
+fixture,v1,1,2026-01-01,8,4,0.5,[pkg.god],0.2,pkg.god,0.3,0.1,12,0.02,0.9,10,20,0.8,0.7,godComponent,s1
+fixture,v1,1,2026-01-01,5,2,0.3,[pkg.unstable],0.7,pkg.unstable,0.8,0.9,7,0.03,0.8,4,10,0.5,0.8,unstable_dependency,s2
+fixture,v1,1,2026-01-01,6,3,0.4,[pkg.hub],0.8,pkg.hub,0.8,0.4,18,0.05,0.85,8,16,0.7,0.9,Hub-Like Dependency,s3
+fixture,v1,1,2026-01-01,3,1,0.1,[pkg.cycle],0.1,,0.1,0,3,0.01,0.3,3,4,0.2,0.2,cyclicDep,s4

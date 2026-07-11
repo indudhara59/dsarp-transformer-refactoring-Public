@@ -1,0 +1,9 @@
+normalization: {lower_quantile: 0.05, upper_quantile: 0.95}
+final_weights: {smell_priority: 0.25, applicability: 0.30, benefit: 0.25, rule_confidence: 0.20, risk: 0.20}
+pressure_weights:
+  godComponent: {children_log: 0.16, loc_log: 0.16, fan_out_norm: 0.12, fan_in_norm: 0.10, page_rank_norm: 0.10, severity_norm: 0.14, strength_norm: 0.10, smell_size_norm: 0.12}
+  unstableDep: {instability_gap_norm: 0.24, severity_norm: 0.16, strength_norm: 0.12, edge_count_norm: 0.12, fan_in_norm: 0.12, page_rank_norm: 0.10, afferent_ratio_norm: 0.07, efferent_ratio_norm: 0.07}
+  hubLikeDep: {fan_in_norm: 0.14, fan_out_norm: 0.14, fan_balance: 0.12, edge_count_norm: 0.12, page_rank_norm: 0.12, severity_norm: 0.12, strength_norm: 0.10, smell_size_norm: 0.14}
+risk_weights: {centrality_composite: 0.25, fan_in_norm: 0.15, page_rank_norm: 0.15, size_composite: 0.20, smell_extent_norm: 0.10, taxonomy_prior: 0.10, missing_fraction: 0.05}
+diversity: {max_per_smell: 2, max_per_component: 3, min_distinct_smell_types: 3, mmr_lambda: 0.8}
+

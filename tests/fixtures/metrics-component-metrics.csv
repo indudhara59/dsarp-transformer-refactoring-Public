@@ -1,0 +1,5 @@
+project,versionId,versionIndex,versionDate,AbstractnessMetric,ComponentType,FanIn,FanOut,InstabilityMetric,LinesOfCode,NumberOfChildren,PageRank,constructType,filePathRelative,name,vertexId
+fixture,v1,1,2026-01-01,0.2,PACKAGE,20,18,0.6,5000,80,0.08,PACKAGE,src/god,pkg.god,c1
+fixture,v1,1,2026-01-01,0.1,PACKAGE,15,9,0.8,1200,20,0.05,PACKAGE,src/unstable,pkg.unstable,c2
+fixture,v1,1,2026-01-01,0.3,PACKAGE,30,28,0.5,2400,35,0.10,PACKAGE,src/hub,pkg.hub,c3
+fixture,v1,1,2026-01-01,0.2,PACKAGE,3,3,0.5,200,5,0.01,PACKAGE,src/cycle,pkg.cycle,c4
