@@ -1,0 +1,18 @@
+backend: xgboost
+objective: rank:ndcg
+evaluation_metrics: [ndcg@5, ndcg@10, map@10]
+label_column: relevance_grade
+label_sources_primary: [expert, historical_validation]
+group_levels:
+  smell: [project, version_id]
+  candidate: [project, version_id, smell_id, affected_component_id]
+  global: [project, version_id]
+features:
+  raw: [severity, strength, smell_size, number_of_edges, smell_extent, smell_extent_by_weight, atdi, atdi_weighted, pagerank_weighted, instability_gap, afferent_affected_ratio, efferent_affected_ratio, affected_classes_ratio, fan_in, fan_out, instability_metric, lines_of_code, number_of_children, page_rank, abstractness_metric]
+  engineered: [centrality_composite, size_composite, hubness_score, god_component_pressure, unstable_dependency_pressure, severity_strength, fan_balance, estimated_risk]
+  baseline: [rule_confidence, applicability_score, expected_benefit, estimated_risk, final_priority_score]
+  transformer: [applicability_probability, predicted_relevance_grade, predicted_benefit, predicted_risk, calibrated_confidence, uncertainty, transformer_semantic_score]
+  taxonomy: [applicability_prior, benefit_prior, risk_prior, contraindication_count]
+embedding_reduction: {method: pca, dimensions: 16, random_state: 42}
+parameters: {n_estimators: 500, max_depth: 6, min_child_weight: 1, learning_rate: 0.05, subsample: 0.8, colsample_bytree: 0.8, reg_alpha: 0.0, reg_lambda: 1.0, gamma: 0.0, tree_method: hist, device: cpu, random_state: 42, early_stopping_rounds: 40}
+

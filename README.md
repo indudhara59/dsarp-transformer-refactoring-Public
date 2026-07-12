@@ -75,3 +75,16 @@ Stage 2 adds partial expert annotations, weak supervision, leakage-safe splittin
 
 Stage 2 outputs live in `outputs/datasets`, `outputs/transformer_predictions`, `outputs/embeddings`, and `outputs/evaluations`. The Stage 1 CLI and outputs remain unchanged.
 
+## Final Stage 3 workflow
+
+Stage 3 adds three-level LambdaMART ranking, full ranking metrics/bootstrapping, grounded cached top-N LLM validation, optional repository context, calibrated ensemble confidence, traceable LLM rejection penalties, exact deduplication/MMR diversity, case studies, and final CSV/JSON/JSONL/Markdown/HTML reports. The complete entry point is `dsarp run`; it remains operational from the three Arcan CSVs using transparent Stage 1 fallbacks when learned artifacts are unavailable.
+
+```bash
+dsarp build-rank-dataset
+dsarp train-ranker
+dsarp evaluate-ranker
+dsarp run --data-dir data --output-dir outputs --top-k 20 --llm-backend disabled
+```
+
+For offline HPC execution and optional vLLM validation, see [end-to-end HPC](docs/hpc_end_to_end.md), [learning to rank](docs/learning_to_rank.md), [LLM validation](docs/llm_validation.md), [final scoring](docs/final_scoring.md), [ablations](docs/ablation_study.md), and [reproducibility](docs/reproducibility.md).
+

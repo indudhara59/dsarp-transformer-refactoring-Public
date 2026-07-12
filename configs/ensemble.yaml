@@ -1,0 +1,7 @@
+mode: full
+weights: {ranker: 0.45, transformer: 0.20, llm: 0.15, rules: 0.10, benefit: 0.10, risk: 0.15}
+llm_rejection: {confidence_threshold: 0.8, invalid_penalty: 0.35, require_warnings: true}
+confidence_weights: {transformer: 0.25, ranker_margin: 0.20, llm: 0.20, rule_agreement: 0.15, evidence_completeness: 0.10, reviewer_agreement: 0.10}
+confidence_bands: {high: 0.80, medium: 0.60}
+diversity: {mmr_lambda: 0.75, max_per_component: 3, max_per_smell: 2, minimum_distinct_smell_types: 3, suppress_family: true, semantic_similarity_weight: 0.35, affected_overlap_weight: 0.15, same_component_weight: 0.20, same_smell_weight: 0.15, same_family_weight: 0.15}
+

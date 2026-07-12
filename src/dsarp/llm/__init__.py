@@ -1,0 +1,1 @@
+"""Grounded optional LLM validation."""

@@ -1,0 +1,13 @@
+data_dir: data
+output_dir: outputs
+top_k: 20
+transformer_predictions: outputs/transformer_predictions/candidate_predictions.csv
+ranker_model: models/ranker/best.json
+calibrator_dir: models/calibrator
+llm_backend: disabled
+llm_top_n: 20
+source_metadata: null
+resume: true
+force: false
+dry_run: false
+seed: 42

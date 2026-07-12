@@ -1,0 +1,2 @@
+"""Optional repository context contract."""
+

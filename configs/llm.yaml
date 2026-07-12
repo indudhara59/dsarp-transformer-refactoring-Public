@@ -1,0 +1,15 @@
+backend: disabled
+model: null
+prompt_version: dsarp-validation-v1
+top_n: 20
+temperature: 0.0
+max_tokens: 1400
+timeout_seconds: 120
+retry_limit: 2
+cache_dir: outputs/llm/cache
+responses: outputs/llm/responses.jsonl
+errors: outputs/llm/errors.jsonl
+endpoint: null
+api_key_env: DSARP_LLM_API_KEY
+decoding: {top_p: 1.0, seed: 42}
+
