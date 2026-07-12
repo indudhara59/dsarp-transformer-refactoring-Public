@@ -1,0 +1,19 @@
+mappings:
+  godComponent:
+    - id: gc_split
+      any_refactorings: [move_class, extract_class]
+      positive_deltas: [lines_of_code, number_of_children, severity]
+      strategies: [split_component, extract_subcomponent]
+      base_confidence: 0.75
+  unstableDep:
+    - id: ud_invert
+      any_refactorings: [extract_interface, move_class, move_method]
+      positive_deltas: [instability_gap, number_of_edges]
+      strategies: [dependency_inversion, move_abstraction]
+      base_confidence: 0.72
+  hubLikeDep:
+    - id: hub_split
+      any_refactorings: [extract_class, move_method, move_class]
+      positive_deltas: [fan_in, fan_out, number_of_edges]
+      strategies: [split_hub_component, move_responsibility]
+      base_confidence: 0.72

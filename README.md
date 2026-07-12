@@ -1,5 +1,7 @@
 # DSARP: Transformer-Assisted Ranking of Refactoring Recommendations
 
+The integrated system also learns weak, confidence-weighted labels from historical Git changes using RefactoringMiner plus Arcan before/after snapshots. Historical training and current inference share the existing Arcan parser and canonical join; the original Stage 1–3 workflows remain available. See [integrated architecture](docs/integrated_architecture.md), [historical mining](docs/historical_mining.md), and [HPC execution](docs/hpc_historical_pipeline.md).
+
 DSARP starts **after** Arcan detects architectural smells. Stage 1 validates Arcan exports, joins smell evidence to affected components and their metrics, creates smell-appropriate refactoring candidates, and ranks them with a deterministic, interpretable baseline. It does not redetect smells or inspect source code.
 
 ## Scope and data flow
@@ -87,4 +89,3 @@ dsarp run --data-dir data --output-dir outputs --top-k 20 --llm-backend disabled
 ```
 
 For offline HPC execution and optional vLLM validation, see [end-to-end HPC](docs/hpc_end_to_end.md), [learning to rank](docs/learning_to_rank.md), [LLM validation](docs/llm_validation.md), [final scoring](docs/final_scoring.md), [ablations](docs/ablation_study.md), and [reproducibility](docs/reproducibility.md).
-

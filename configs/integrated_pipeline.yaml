@@ -1,0 +1,9 @@
+repositories_config: configs/repositories.yaml
+historical_data_dir: data/historical
+output_dir: outputs/historical
+recommended_dataset_variant: E
+resume: true
+force: false
+dry_run: false
+schema_version: "1.0"
+offline: true

@@ -1,0 +1,15 @@
+weights:
+  element_overlap: 0.22
+  component_overlap: 0.12
+  smell_prior: 0.08
+  historical_frequency: 0.08
+  improvement_score: 0.20
+  mapping_confidence: 0.15
+  evidence_completeness: 0.15
+  ambiguity_penalty: 0.25
+  unrelated_refactoring_penalty: 0.30
+quality_bands:
+  strong_historical_label: 0.70
+  medium_historical_label: 0.50
+  weak_historical_label: 0.25
+smell_priors: {godComponent: 0.6, unstableDep: 0.55, hubLikeDep: 0.55}

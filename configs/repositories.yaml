@@ -1,0 +1,2 @@
+repositories: []
+# Each entry: {name: project, url: https://..., local_path: cache/project, enabled: true}

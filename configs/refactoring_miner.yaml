@@ -1,0 +1,5 @@
+command: ["${DSARP_REFACTORINGMINER_PATH}", "-c", "{repository}", "{commit}", "-json", "{output}"]
+timeout_seconds: 900
+retries: 1
+version: unknown
+offline: true

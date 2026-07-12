@@ -1,0 +1,8 @@
+keywords: [refactor, extract, move, rename, clean, modular, architecture, dependency, decouple, split, interface, restructure]
+all_non_merge: false
+java_only: true
+max_commits: null
+sample_size: null
+seed: 42
+since: null
+until: null

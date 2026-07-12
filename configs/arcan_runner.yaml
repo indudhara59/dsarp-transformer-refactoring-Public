@@ -1,0 +1,5 @@
+command: ["${DSARP_JAVA_HOME}/bin/java", "-jar", "${DSARP_ARCAN_PATH}", "-p", "{source}", "-o", "{output}"]
+timeout_seconds: 3600
+version: unknown
+expected_files: [smells-smell-characteristics.csv, affects-smell-affects.csv, metrics-component-metrics.csv]
+offline: true

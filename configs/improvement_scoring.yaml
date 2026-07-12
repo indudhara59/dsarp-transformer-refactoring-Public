@@ -1,0 +1,16 @@
+smells:
+  godComponent:
+    weights: {severity: 1.0, strength: 0.8, atdi: 1.0, number_of_children: 0.7, lines_of_code: 0.8, fan_out: 0.5, smell_extent: 0.7}
+    scales: {severity: 1, strength: 1, atdi: 10, number_of_children: 5, lines_of_code: 500, fan_out: 10, smell_extent: 5}
+    resolution_bonus: 1.5
+    improved_threshold: 0.10
+  unstableDep:
+    weights: {instability_gap: 1.2, severity: 1.0, strength: 0.8, number_of_edges: 0.8, atdi: 0.8}
+    scales: {instability_gap: 0.2, severity: 1, strength: 1, number_of_edges: 5, atdi: 10}
+    resolution_bonus: 1.5
+    improved_threshold: 0.10
+  hubLikeDep:
+    weights: {fan_in: 0.8, fan_out: 0.8, number_of_edges: 1.0, page_rank: 0.5, severity: 1.0, strength: 0.8, smell_extent: 0.7}
+    scales: {fan_in: 10, fan_out: 10, number_of_edges: 10, page_rank: 0.1, severity: 1, strength: 1, smell_extent: 5}
+    resolution_bonus: 1.5
+    improved_threshold: 0.10

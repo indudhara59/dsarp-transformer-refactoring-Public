@@ -1,0 +1,8 @@
+matching:
+  type_weight: 0.35
+  central_weight: 0.25
+  components_weight: 0.20
+  elements_weight: 0.10
+  path_weight: 0.10
+  threshold: 0.60
+  ambiguity_margin: 0.03
