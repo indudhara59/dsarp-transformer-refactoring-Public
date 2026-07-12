@@ -20,7 +20,6 @@ def generate_candidates(unified: pd.DataFrame, taxonomy: dict[str, dict[str, Any
             if row["smell_type"] not in entry["smell_types"]:
                 continue
             record = row.to_dict()
-            record.update({"candidate_id": stable_candidate_id(row, recommendation_id), "recommendation_id": recommendation_id, "display_name": entry["display_name"], "taxonomy_description": entry["description"], "intended_effect": entry["intended_effect"], "implementation_outline": entry["implementation_outline"], "warning_text": entry["warning"], "recommendation_family": entry["family"], "applicability_prior": float(entry["applicability_prior"]), "benefit_prior": float(entry["benefit_prior"]), "risk_prior": float(entry["risk_prior"])})
+            record.update({"candidate_id": stable_candidate_id(row, recommendation_id), "recommendation_id": recommendation_id, "display_name": entry["display_name"], "taxonomy_description": entry["description"], "intended_effect": entry["intended_effect"], "supporting_indicators": entry["indicators"], "contraindications": entry["contraindications"], "implementation_outline": entry["implementation_outline"], "warning_text": entry["warning"], "recommendation_family": entry["family"], "applicability_prior": float(entry["applicability_prior"]), "benefit_prior": float(entry["benefit_prior"]), "risk_prior": float(entry["risk_prior"])})
             records.append(record)
     return pd.DataFrame.from_records(records)
-

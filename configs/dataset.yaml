@@ -1,0 +1,10 @@
+source_candidates: outputs/processed/refactoring_candidates.csv
+annotations: data/annotations/refactoring_annotations.csv
+output: outputs/datasets/training_examples.parquet
+annotation_template: outputs/datasets/annotation_template.csv
+numeric_features: [severity_norm, strength_norm, atdi_norm, atdi_weighted_norm, smell_size_norm, edge_count_norm, smell_extent_norm, instability_gap_norm, afferent_ratio_norm, efferent_ratio_norm, affected_classes_ratio_norm, fan_in_norm, fan_out_norm, page_rank_norm, loc_log, children_log, fan_balance, centrality_composite, size_composite, hubness_score, god_component_pressure, unstable_dependency_pressure, hub_like_dependency_pressure, rule_confidence, applicability_score, expected_benefit, estimated_risk, final_priority_score]
+categorical_features: [smell_type, component_type, construct_type, recommendation_family]
+weak_supervision: {enabled: true, minimum_confidence: 0.55}
+negative_sampling: {easy_ratio: 0.25, hard_ratio: 0.5, counterfactual_ratio: 0.25, seed: 42}
+split: {strategy: project_version_smell, train: 0.7, validation: 0.15, test: 0.15, seed: 42}
+

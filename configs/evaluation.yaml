@@ -1,0 +1,6 @@
+primary_metric: macro_f1
+grouped_split: true
+leave_one_project_out: true
+cross_version: true
+slices: [smell_type, recommendation_id, project, version_id, label_source, confidence_band]
+output_dir: outputs/evaluations

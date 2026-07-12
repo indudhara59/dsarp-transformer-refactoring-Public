@@ -1,0 +1,16 @@
+numeric_input_dim: 28
+numeric_hidden_dims: [128, 64]
+numeric_output_dim: 64
+categorical_embedding_dim: 16
+categorical_cardinalities: {smell_type: 4, component_type: 16, construct_type: 16, recommendation_family: 32}
+fusion_hidden_dims: [256, 128]
+fusion_output_dim: 128
+dropout: 0.2
+relevance_mode: multiclass
+relevance_classes: 5
+uncertainty_head: true
+loss_weights: {applicability: 1.0, relevance: 1.0, benefit: 0.5, risk: 0.5}
+classification_loss: cross_entropy
+regression_loss: huber
+focal_gamma: 2.0
+

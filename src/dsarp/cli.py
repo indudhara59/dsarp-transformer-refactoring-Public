@@ -50,6 +50,48 @@ def run_stage1_command(data_dir: Path = typer.Option(Path("data")), output_dir: 
     _execute(data_dir, output_dir, top_k)
 
 
+@app.command("build-dataset")
+def build_dataset_command(config: Path = typer.Option(Path("configs/dataset.yaml")), transformer_config: Path = typer.Option(Path("configs/transformer.yaml"))) -> None:
+    """Build Stage 2 examples, annotation template, and split manifest."""
+    from dsarp.datasets.dataset_builder import build_dataset
+    frame = build_dataset(config, transformer_config); console.print(f"[green]Built[/green] {len(frame)} training examples")
+
+
+def _run_stage2_script(script: str, arguments: list[str]) -> None:
+    import subprocess, sys
+    completed = subprocess.run([sys.executable, str(Path("scripts") / script), *arguments], check=False)
+    if completed.returncode: raise typer.Exit(completed.returncode)
+
+
+@app.command("train-transformer")
+def train_transformer_command(config: Path = typer.Option(Path("configs/training.yaml"))) -> None:
+    """Run configured transformer training (intended for HPC)."""
+    _run_stage2_script("train_transformer.py", ["--config", str(config)])
+
+
+@app.command("evaluate-transformer")
+def evaluate_transformer_command(predictions: Path = typer.Option(...)) -> None:
+    """Evaluate persisted transformer predictions."""
+    _run_stage2_script("evaluate_transformer.py", ["--predictions", str(predictions)])
+
+
+@app.command("calibrate-transformer")
+def calibrate_transformer_command(validation: Path = typer.Option(...)) -> None:
+    """Fit a validation-set probability calibrator."""
+    _run_stage2_script("calibrate_transformer.py", ["--validation", str(validation)])
+
+
+@app.command("export-embeddings")
+def export_embeddings_command(checkpoint: Path = typer.Option(...), dataset: Path = typer.Option(...)) -> None:
+    """Export fused embeddings using a local checkpoint."""
+    _run_stage2_script("export_embeddings.py", ["--checkpoint", str(checkpoint), "--dataset", str(dataset)])
+
+
+@app.command("transformer-inference")
+def transformer_inference_command(checkpoint: Path = typer.Option(...), dataset: Path = typer.Option(...)) -> None:
+    """Run offline batch inference using a local checkpoint."""
+    _run_stage2_script("run_transformer_inference.py", ["--checkpoint", str(checkpoint), "--dataset", str(dataset)])
+
+
 if __name__ == "__main__":
     app()
-

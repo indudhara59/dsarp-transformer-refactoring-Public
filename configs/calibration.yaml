@@ -1,0 +1,6 @@
+methods: [temperature, platt, isotonic]
+selection_metric: brier_score
+bins: 10
+minimum_examples: 20
+output_dir: models/calibrator
+

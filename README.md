@@ -69,3 +69,9 @@ Arcan exports describe components rather than class-level cohesion, transactiona
 
 Stage 2 can build annotation protocols and transformer-ready datasets; Stage 3 can train/evaluate learned ranking models against this baseline on university HPC. **No transformer training, large-model inference, GPU work, downloads, Slurm jobs, or hyperparameter searches are run in this development environment.**
 
+## Stage 2 machine-learning layer
+
+Stage 2 adds partial expert annotations, weak supervision, leakage-safe splitting, deterministic architecture-context text, a hybrid PyTorch/AutoModel multi-task network, calibration/evaluation, offline inference, embeddings, and Slurm orchestration. Install ML dependencies with `pip install -e '.[dev,ml]'`, then use `dsarp build-dataset`; training and inference commands are intended for an offline HPC environment with weights already transferred. See [the dataset guide](docs/stage2_dataset.md), [annotation guide](docs/annotation_guide.md), [architecture](docs/transformer_architecture.md), [evaluation](docs/model_evaluation.md), and [HPC/offline setup](docs/hpc_training.md).
+
+Stage 2 outputs live in `outputs/datasets`, `outputs/transformer_predictions`, `outputs/embeddings`, and `outputs/evaluations`. The Stage 1 CLI and outputs remain unchanged.
+

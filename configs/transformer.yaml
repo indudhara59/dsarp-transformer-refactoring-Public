@@ -1,0 +1,14 @@
+model_name_or_path: microsoft/graphcodebert-base
+tokenizer_name_or_path: microsoft/graphcodebert-base
+local_files_only: true
+trust_remote_code: false
+max_sequence_length: 384
+pooling: attention_mask_mean
+freeze_epochs: 1
+gradual_unfreezing: true
+semantic_enabled: true
+numeric_enabled: true
+categorical_enabled: true
+baseline_scores_enabled: true
+context: {missing_token: "<MISSING>", numeric_precision: 4, max_affected_elements: 30, max_characters: 12000}
+
